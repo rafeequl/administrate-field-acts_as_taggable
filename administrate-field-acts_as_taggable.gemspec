@@ -1,4 +1,4 @@
-$:.push File.expand_path('../lib', __FILE__)
+$:.push File.expand_path('lib', __dir__)
 
 require 'administrate/field/acts_as_taggable/version'
 
@@ -16,10 +16,10 @@ Gem::Specification.new do |gem|
   gem.files = `git ls-files`.split("\n")
   gem.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
 
+  gem.add_runtime_dependency 'acts-as-taggable-on', '>=11.0'
   gem.add_runtime_dependency 'administrate', '< 1.0.0'
-  gem.add_runtime_dependency 'acts-as-taggable-on', '>=6.0'
 
+  gem.add_development_dependency 'chandler'
   gem.add_development_dependency 'rake', '~> 12.3'
   gem.add_development_dependency 'rspec', '~> 3.7'
-  gem.add_development_dependency 'chandler'
 end
